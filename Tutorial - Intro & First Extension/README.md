@@ -320,9 +320,9 @@ So, let's add the following XML to our module's config.xml.
 	    <!-- ... -->
 	</global>
 
-**`<weblog />`** is your Group Name, which should match your module name.<br />
-**`<class />`** is the BASE name all Models in the weblog group will have.<br />
-**`<resourceModel />`** tag indicates which Resource Model that weblog group Models should use.
+`<weblog />` is your Group Name, which should match your module name.<br />
+`<class />` is the BASE name all Models in the weblog group will have.<br />
+`<resourceModel />` indicates which Resource Model that weblog group Models should use.
 
 So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your testModelAction method, use the following code
 
