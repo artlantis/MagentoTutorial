@@ -1,12 +1,12 @@
-![](files/MagentoLogo.jpg)
+![](files/arvato_hightech_emea_herobanner.jpg)
 
-# Magento Developer Tutorial
-
-## Overview
-
-* Quick Demo (Admin)
-
-###  Who is Magento - A Company-Overview ##
+#  Tutorial objectives
+* Understand the Magento Company and Products
+* Have a rough understanding of most important Magento concepts 
+* know how files are organized
+* know the basic tasks for extending Magento
+ 
+#  Who is Magento - A Company-Overview ##
  * 100%-owned by ebay since 2010
  * Subbrand listed under x.commerce
  * Headquarter in Los Angeles (USA)

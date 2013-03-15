@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 5px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 22px;
+    margin: 20px 0 6px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+    margin-left: 44px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* CSS stylesheet is based on Kevin Burke's Markdown.css project (http://kevinburke.bitbucket.org/markdowncss) */
+</style>
+</head>
+<body>
+<p><img src="files/MagentoLogo.jpg" alt="" /></p>
+
+<h1>Magento Developer Tutorial</h1>
+
+<h2>Overview</h2>
+
+<ul>
+<li>Quick Demo (Admin)</li>
+</ul>
+
+<h3>Who is Magento - A Company-Overview</h3>
+
+<ul>
+<li>100%-owned by ebay since 2010</li>
+<li>Subbrand listed under x.commerce</li>
+<li>Headquarter in Los Angeles (USA)</li>
+<li>Local subsidiaries in Berlin, London, Brussels and Dublin</li>
+<li>Employee-count: ca. 400</li>
+<li>> 150.000 installations world-wide</li>
+</ul>
+
+<h3>Relating Magento to ebay:</h3>
+
+<p><img src="files/ebay_company_diagram.jpg" alt="" /></p>
+
+<h2>How are they doing development?</h2>
+
+<ul>
+<li>2 Edition available - Community Edition (CE) and Enterprise Edition (EE)</li>
+<li>Both Editions are developed by the Magento Company itself, whereas the CE is always a few versions behind the EE</li>
+<li>Apart from the version difference, EE contains more default extensions than CE</li>
+</ul>
+
+<h3>Enterprise Only Features</h3>
+
+<ul>
+<li>SolR Search (but extensions for CE available)</li>
+<li>Customer Segmentation with Targeted Offerings</li>
+<li>Dynamic - Rules-bades product relationships</li>
+<li>Automatic E-Mail Reminders</li>
+<li>Private Sales for custer groups (incl. Invitation)</li>
+<li>Gift Registry</li>
+<li>Gift Wrap Option</li>
+<li>Rebate Points Modul</li>
+<li>Several Wishlists per Customer</li>
+<li>Enhanced Catalog and Content Management System (CMS+)</li>
+<li>Staging, Merging and Rollback of Content</li>
+<li>Scheduled Publishing of Pages</li>
+<li>Customer-specific Profile Attributes</li>
+<li>Improved Performance (but you can achieve this with Varinish for CE)</li>
+<li>Payment Bridge</li>
+<li>Data Encrpytion and Key Management</li>
+<li>Call Center with Assisted Shopping</li>
+<li>Minimum Advertised Price</li>
+<li>Full-page Caching</li>
+<li>Customer Segmentation with Targeted Offerings</li>
+<li>Recurring Payments</li>
+<li>Full Page Caching</li>
+</ul>
+
+<h3>Magento Connect</h3>
+
+<p>Url: <a href="http://www.magentocommerce.com/magento-connect/" title="http://www.magentocommerce.com/magento-connect/">http://www.magentocommerce.com/magento-connect/</a></p>
+
+<h2>General Magento Concepts</h2>
+
+<ul>
+<li>Magento is based on OOP and the Zend-Framework</li>
+<li>Module-based Architecture</li>
+<li>Event-Driven Architecture</li>
+<li>Configuration-Based</li>
+</ul>
+
+<h3>MVC</h3>
+
+<ul>
+<li>Configuration-based Routing</li>
+<li>Configuration-based Views (Layout+Blocks)</li>
+<li>Thin-Controllers</li>
+<li><p>Models contain Business Logic   </p>
+
+<p><img src="files/mvc.png" alt="" /></p></li>
+</ul>
+
+<h3>The Filesystem</h3>
+
+<p><strong>Top-Level</strong><br />
+/ app - This is where the big stuff happens :)<br />
+/ skin / {area} / {package} / {theme} / - is where design package css and images are<br />
+/ lib - are libraries such as Zend and Varien<br />
+/ js - where you put your javascripts<br />
+/ media - uploaded files (product images, pdf documents, etc)<br />
+/ tests - Unit tests (not done yet)<br />
+/ var - temporary files<br />
+/ includes - contains config.php<br /></p>
+
+<p><strong>Inside the app folder</strong><br />
+/ app / etc - global configuration. register your module with the system here<br />
+/ app / code - is where modules have installed their models and controllers<br />
+/ app / design - is location of design packages (layouts, templates, translations)<br />
+/ app / locale - locale files<br />
+<br />
+<strong>App code pools</strong><br />
+/ app / code / core - are core team developed or certified modules<br />
+/ app / code / community - are community contributed modules<br />
+/ app / code / local - are local customizations<br />
+<br />
+<strong>App design-reated</strong><br />
+/ app / design / frontend - frontend design<br />
+/ app / design / adminhtml - HTML admin panel design<br />
+/ app / design / {area} / {package} / {theme} - theme customizations<br />
+/ app / design / {area} / {package} / {theme} / layout - .xml files that define block structure for different cases in website flow<br />
+/ app / design / {area} / {package} / {theme} / template - .phtml (html with php tags) templates<br />
+/ app / design / {area} / {package} / {theme} / locale - Zend_Translate compatible translation files for package/theme<br /></p>
+
+<p>/ app / locale / {locale (en<em>US)} - Zend</em>Translate compatible translation files for modules<br /></p>
+
+<p><strong>The Module structure</strong><br />
+/ {Your  Code pool} / {Module} - module root<br />
+/ {Your  Code pool} / {Module} / etc - module configuration<br />
+/ {Your  Code pool} / {Module} / controllers - controllers provided by module<br />
+/ {Your  Code pool} / {Module} / Block - Block logic classes<br />
+/ {Your  Code pool} / {Module} / Model - Object Models provided by module<br />
+/ {Your  Code pool} / {Module} / Model / Mysql4 - Resource Models provided by module<br />
+/ {Your  Code pool} / {Module} / sql - sql installation and upgrade files between module versions<br />
+/ {Your  Code pool} / {Module} / sql / {resource} / - resource model specific upgrades<br /></p>
+
+<h3>Layout System</h3>
+
+<p>Layout  and Design are separated from each other.<br /></p>
+
+<h4>Important terms</h4>
+
+<p><strong>Design package</strong>: is a collection of related themes. Each design package must have at least one default theme, but can contain any number of theme variants. (Christmas, holidays, etc.) /App/Design/Frontend/…</p>
+
+<p><strong>Base package</strong>: A special package that contains all the default elements for a Magento installation (we will discuss this in more detail in a moment) </p>
+
+<p><strong>Default package</strong>: This contains the layout elements of the default store (look and feel), which we have seen already in previous chapters</p>
+
+<p><strong>Theme</strong>: Part of a design package. Contains Layout Files, Template Files and Locale (optional). A theme can belong to only one design package. Every theme automatically included 4 basic layouts (one column, two columns with left sidebar, two column with right sidebar, three columns)</p>
+
+<p><strong>Skin</strong>: CSS, images, java script. Skins reside in a separate root folder named “Skin”. (Similar sub-tree like apps/design)</p>
+
+<p><img src="files/sample_skins.png" alt="" /></p>
+
+<p><strong>Layout-Files</strong>: Define the hierarchical structure of a page. (footer, header, content, …) – XML Files. The structure is defined by handles, blocks and actions.
+ layout file always has a <layout> root node. The first child-level of this nodes are the “handles” (also called layout objects.). Handles contain blocks, which are the most important structural elements. Each block has a corresponding Template file. Blocks contain PHP logic, templates contain HTML and PHP output code. 
+Handles are instantiated by the application controller’s action methods, and so the application logic decides which blocks get displayed. Blocks refer directly back to the models for their data. In other words, the Action Controller does not pass them a data structure. By creating a file called local.xml and placing it within the /layout directory of your theme, you can alter your layout by turning off any blocks defined by the base package page.xml file.</p>
+
+<p><img src="files/sample_layout_xml.png" alt="" /></p>
+
+<p><strong>Template-Files</strong>: PHTML Files. – They define where the defined areas of the layout file appear in the rendered HTML page. To all of those files together, the documentation refers to as “template”.</p>
+
+<ul>
+<li><p>Blocks = Additional Layer between controllers and view representation of the application</p></li>
+<li><p>Layout XML</p></li>
+</ul>
+
+<h3>EAV</h3>
+
+<ul>
+<li>Explain the pattern</li>
+<li>pro &amp; con</li>
+<li>OR Mapper</li>
+<li>Show DB</li>
+</ul>
+
+<h2>Developing a web log extension</h2>
+
+<p>Enough theory, it's time for a first Module. This walktrough tutorial is mainly derived from <a href="http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-3-magento-controller-dispatch">Alan Storms Magento Developer Tutorial Part 3 and 5
+</a> <br /></p>
+
+<p>We're going to:</p>
+
+<ul>
+<li>Create a new "Weblog" module</li>
+<li>Create a database table for our Model</li>
+<li>Add Model information to the config for a Model named Blogpost</li>
+<li>Add Model Resource information to the config for the Blogpost Model</li>
+<li>Add a Read Adapter to the config for the Blogpost Model</li>
+<li>Add a Write Adapter to the config for the Blogpost Model</li>
+<li>Add a PHP class file for the Blogpost Model</li>
+<li>Add a PHP class file for the Blogpost Resource Model</li>
+<li>Instantiate the Model</li>
+</ul>
+
+<h3>Create a weblog module in the Magento system</h3>
+
+<p>First, we'll create a directory structure for this module. Our directory structure should look as follows:</p>
+
+<p>app/code/local/Magentotutorial/Weblog/Block<br />
+app/code/local/Magentotutorial/Weblog/controllers<br />
+app/code/local/Magentotutorial/Weblog/etc<br />
+app/code/local/Magentotutorial/Weblog/Helper<br />
+app/code/local/Magentotutorial/Weblog/Model<br />
+app/code/local/Magentotutorial/Weblog/sql<br /></p>
+
+<p>Then create a configuration file for the module (at path app/code/local/Magentotutorial/Weblog/etc/config.xml):</p>
+
+<!-- language: lang-xml -->
+
+<pre><code>&lt;config&gt;
+    &lt;modules&gt;
+        &lt;Magentotutorial_Weblog&gt;
+            &lt;version&gt;0.1.0&lt;/version&gt;
+        &lt;/Magentotutorial_Weblog&gt;
+    &lt;/modules&gt;
+&lt;/config&gt;
+</code></pre>
+
+<p>Then create a file to activate the module (at path app/etc/modules/Magentotutorial_Weblog.xml):</p>
+
+<!-- language: lang-xml -->
+
+<pre><code>&lt;config&gt;
+    &lt;modules&gt;
+        &lt;Magentotutorial_Helloworld&gt;
+            &lt;active&gt;true&lt;/active&gt;
+            &lt;codePool&gt;local&lt;/codePool&gt;
+        &lt;/Magentotutorial_Helloworld&gt;
+    &lt;/modules&gt;
+&lt;/config&gt;
+</code></pre>
+
+<p>Finally, we ensure the module is active. - Clear your Magento cache.</p>
+
+<ul>
+<li>In the Magento Admin, go to System->Configuration->Advanced.</li>
+<li>Expand "Disable Modules Output" (if it isn't already).</li>
+<li>Ensure that Magentotutorial_Weblog shows up.</li>
+</ul>
+
+<h3>Create Action Controller(s) for our Routes</h3>
+
+<p>Create a file at app/code/local/Magentotutorial/Weblog/controllers/IndexController.php</p>
+
+<p>That contains the following</p>
+
+<!-- language: lang-php -->
+
+<pre><code>class Magentotutorial_Helloworld_IndexController extends Mage_Core_Controller_Front_Action {        
+
+    public function testModelAction() {
+       echo 'Setup!';
+    }
+
+}
+</code></pre>
+
+<h3>Configuring Routes</h3>
+
+<p>Next, we're going to configure a route. A route will turn a URL into an Action Controller and a method. Unlike other convention based PHP MVC systems, with Magento you need to explicitly define a route in the global Magento config.</p>
+
+<p>In your config.xml file, add the following section:</p>
+
+<!-- language: lang-xml -->
+
+<pre><code>&lt;config&gt;    
+    ...
+    &lt;frontend&gt;
+       &lt;routers&gt;
+        &lt;weblog&gt;
+            &lt;use&gt;standard&lt;/use&gt;
+            &lt;args&gt;
+                &lt;module&gt;Magentotutorial_Weblog&lt;/module&gt;
+                &lt;frontName&gt;weblog&lt;/frontName&gt;
+            &lt;/args&gt;
+        &lt;/weblog&gt;
+    &lt;/routers&gt;
+    &lt;/frontend&gt;
+    ...
+&lt;/config&gt;
+</code></pre>
+
+<h4>Understand the routing</h4>
+
+<p>The <code>&lt;frontend&gt;</code> tag refers to a Magento Area. There are mainly two of them <admin> and <frontend>.<br />
+The <code>&lt;routers&gt;</code> tag contains all custom registered routes.<br /></p>
+
+<p>When a router parses a URL, it gets separated as follows</p>
+
+<pre><code>http://example.com/frontName/actionControllerName/actionMethod/
+</code></pre>
+
+<p>So, by defining a value of "weblog" in the <code>&lt;frontName&gt;</code> tags, we're telling Magento that we want the system to respond to URLs in the form of</p>
+
+<pre><code>http://example.com/weblog/*
+</code></pre>
+
+<p>This module tag should be the full name of your module, including its package/namespace name. This will be used by the system to locate your Controller files.</p>
+
+<h4>Testing the registered action</h4>
+
+<p>Clear your config cache, and load the following URL</p>
+
+<pre><code>http://exmaple.com/weblog/index/testModel
+</code></pre>
+
+<p>You should see the word "Setup" on a white background. Congratulations, you've setup your first Magento Controller!</p>
+
+<h3>Create a database table for our Model</h3>
+
+<p>Magento has a system for automatically creating and changing your database schemas, but for the time being we'll just manually create a table for our Model.</p>
+
+<p>Using the command-line or your favorite MySQL GUI application, create a table with the following schema</p>
+
+<!-- language: lang-sql -->
+
+<pre><code>CREATE TABLE `blog_posts` (
+  `blogpost_id` int(11) NOT NULL auto_increment,
+  `title` text,
+  `post` text,
+  `date` datetime default NULL,
+  `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`blogpost_id`)
+)
+</code></pre>
+
+<p>And then populate it with some data</p>
+
+<pre><code>INSERT INTO `blog_posts` VALUES (1,'My New Title','This is a blog post','2010-07-01 00:00:00','2010-07-02 23:12:30');
+</code></pre>
+
+<h3>Add Model information to the config for a Model named Blogpost</h3>
+
+<h4>Enabling Models in our Module</h4>
+
+<p>When you instantiate a Model in Magento, you make a call like this</p>
+
+<!-- language: lang-php -->
+
+<pre><code>$model = Mage::getModel('weblog/blogpost');
+</code></pre>
+
+<p>he first part of the URI you pass into get Model is the Model Group Name. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
+
+<p>So, let's add the following XML to our module's config.xml.</p>
+
+<!-- language: lang-xml -->
+
+<pre><code>&lt;global&gt;
+    &lt;!-- ... --&gt;
+    &lt;models&gt;
+        &lt;weblog&gt;
+            &lt;class&gt;Magentotutorial_Weblog_Model&lt;/class&gt;
+            &lt;!--
+            need to create our own resource, cant just
+            use core_resource
+            --&gt;
+            &lt;resourceModel&gt;weblog_resource&lt;/resourceModel&gt;
+        &lt;/weblog&gt;
+    &lt;/models&gt;
+    &lt;!-- ... --&gt;
+&lt;/global&gt;
+</code></pre>
+
+<p><strong><code>&lt;weblog /&gt;</code></strong> is your Group Name, which should match your module name.<br />
+<strong><code>&lt;class /&gt;</code></strong> is the BASE name all Models in the weblog group will have.<br />
+<strong><code>&lt;resourceModel /&gt;</code></strong> tag indicates which Resource Model that weblog group Models should use.</p>
+
+<p>So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your testModelAction method, use the following code</p>
+
+<!-- language: lang-php -->
+
+<pre><code>public function testModelAction() {
+        $blogpost = Mage::getModel('weblog/blogpost');
+        echo get_class($blogpost);
+    }
+</code></pre>
+
+<p>and reload your page. You should see an exception that looks something like this (be sure you've turned on developer mode).</p>
+
+<pre><code>include(Magentotutorial/Weblog/Model/Blogpost.php) [function.include]: failed to open stream: No such file or directory
+</code></pre>
+
+<p>Magento is trying to __autoload include this Model, but can't find the file. Let's create it! Create the following class at the following location</p>
+
+<pre><code>File: app/code/local/Magentotutorial/Weblog/Model/Blogpost.php
+</code></pre>
+
+<!-- language: lang-php -->
+
+<pre><code>class Magentotutorial_Weblog_Model_Blogpost extends Mage_Core_Model_Abstract
+{
+    protected function _construct()
+    {
+        $this-&gt;_init('weblog/blogpost');
+    }
+}
+</code></pre>
+
+<h3>Add Model Resource information to the config for the Blogpost Model</h3>
+
+<p>So, we've setup our Model. Next, we need to setup our Model Resource. Model Resources contain the code that actually talks to our database. In the last section, we included the following in our config.</p>
+
+<pre><code>&lt;resourceModel&gt;weblog_resource&lt;/resourceModel&gt;
+</code></pre>
+
+<h3>Add a Read Adapter to the config for the Blogpost Model</h3>
+
+<h3>Add a Write Adapter to the config for the Blogpost Model</h3>
+
+<h3>Add a PHP class file for the Blogpost Model</h3>
+
+<h3>Add a PHP class file for the Blogpost Resource Model</h3>
+
+<h3>Instantiate the Model</h3>
+
+<h2>Bibliography</h2>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
