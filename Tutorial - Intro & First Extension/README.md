@@ -193,10 +193,10 @@ Then create a file to activate the module (at path app/etc/modules/Magentotutori
 	
 	<config>
 	    <modules>
-	        <Magentotutorial_Helloworld>
+	        <Magentotutorial_Weblog>
 	            <active>true</active>
 	            <codePool>local</codePool>
-	        </Magentotutorial_Helloworld>
+	        </Magentotutorial_Weblog>
 	    </modules>
 	</config>
 
@@ -214,7 +214,7 @@ That contains the following
 
 <!-- language: lang-php -->
 
-	class Magentotutorial_Helloworld_IndexController extends Mage_Core_Controller_Front_Action {        
+	class Magentotutorial_Weblog_IndexController extends Mage_Core_Controller_Front_Action {        
 	
 	    public function testModelAction() {
            echo 'Setup!';
