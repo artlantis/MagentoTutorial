@@ -3,18 +3,18 @@
 
 Let's assume we want to create a new module "Magentotutorial_Weblog"
 
-Create a new folder in the git master directory
+Open a console, create a new folder in the git master directory
 
 <!-- language: lang-bash -->
 	
 	cd /home/dev/Dropbox/git-master-magento
 	mkdir Magento-Module-Magentotutorial_Weblog.git
 
-Open a console, navigate into the new folder and create a git bare repository.
+Navigate into the new folder and create a git bare repository.
 
 <!-- language: lang-bash -->
 
-	cd "/home/dev/Dropbox/git-master-magento/Magento-Module-Magentotutorial_Weblog.git"
+	cd "Magento-Module-Magentotutorial_Weblog.git"
     git init --bare
 
 ![Screenshot of new bare repository](files/new-git-bare-repo.png)
