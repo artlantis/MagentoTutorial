@@ -17,6 +17,7 @@ Navigate into the new folder and create a git bare repository.
 	cd "Magento-Module-Magentotutorial_Weblog.git"
     git init --bare
 
+Check the folder content in Nautilus. It should look like this:
 ![Screenshot of new bare repository](files/new-git-bare-repo.png)
 
 ## Create a temporary local repository clone
