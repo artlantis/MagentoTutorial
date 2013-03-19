@@ -97,7 +97,7 @@ Url: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerc
 / app / design / {area} / {package} / {theme} / template - .phtml (html with php tags) templates<br />
 / app / design / {area} / {package} / {theme} / locale - Zend_Translate compatible translation files for package/theme<br />
 
-/ app / locale / {locale (en_US)} - Zend_Translate compatible translation files for modules<br />
+/ app / locale / {locale (en\_US)} - Zend_Translate compatible translation files for modules<br />
 
 **The Module structure**<br />
 / {Your  Code pool} / {Module} - module root<br />
@@ -112,14 +112,14 @@ Url: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerc
 
 ### Layout System
 
-Layout  and Design are separated from each other.<br />
+Layout and Design are separated from each other.<br />
 
 ####Important terms
 **Design package**: is a collection of related themes. Each design package must have at least one default theme, but can contain any number of theme variants. (Christmas, holidays, etc.) /App/Design/Frontend/…
 
-**Base package**: A special package that contains all the default elements for a Magento installation (we will discuss this in more detail in a moment) 
+**Base package**: A special package that contains all the default elements for a Magento installation. 
 
-**Default package**: This contains the layout elements of the default store (look and feel), which we have seen already in previous chapters
+**Default package**: This contains the layout elements of the default store (look and feel).
 
 **Theme**: Part of a design package. Contains Layout Files, Template Files and Locale (optional). A theme can belong to only one design package. Every theme automatically included 4 basic layouts (one column, two columns with left sidebar, two column with right sidebar, three columns)
 
@@ -128,24 +128,91 @@ Layout  and Design are separated from each other.<br />
 ![](files/sample_skins.png)
 
 **Layout-Files**: Define the hierarchical structure of a page. (footer, header, content, …) – XML Files. The structure is defined by handles, blocks and actions.
- layout file always has a <layout> root node. The first child-level of this nodes are the “handles” (also called layout objects.). Handles contain blocks, which are the most important structural elements. Each block has a corresponding Template file. Blocks contain PHP logic, templates contain HTML and PHP output code. 
-Handles are instantiated by the application controller’s action methods, and so the application logic decides which blocks get displayed. Blocks refer directly back to the models for their data. In other words, the Action Controller does not pass them a data structure. By creating a file called local.xml and placing it within the /layout directory of your theme, you can alter your layout by turning off any blocks defined by the base package page.xml file.
+ Layout file always has a <layout> root node. The first child-level of this nodes are the “handles” (also called layout objects.). 
 
-   ![](files/sample_layout_xml.png)
+**Handles** are instantiated by the application controller’s action methods, and so the application logic decides which blocks get displayed. For doing that the controller code calls $this->loadLayout & $this->renderLayout. Handles contain blocks, which are the most important structural elements.
 
-**Template-Files**: PHTML Files. – They define where the defined areas of the layout file appear in the rendered HTML page. To all of those files together, the documentation refers to as “template”.
+ ![](files/sample_layout_xml.png)
 
-* Blocks = Additional Layer between controllers and view representation of the application
+**Blocks:** Blocks can be seen as view models. Most blocks have a corresponding template file. Blocks contain PHP logic, templates contain HTML and PHP output code. Blocks refer directly back to the models for their data. In other words, the Action Controller does not pass them a data structure.
+Blocks are hierarchical. Each block can contain any number of child blocks.
 
 
+**Template-Files**: PHTML Files. – They define where the defined areas of the layout file appear in the rendered HTML page. To all of those files together, the documentation refers to as “template”. <br />*Note:* Whenever we use the `$this` keyword, we reference the instance of the related block object.
 
-* Layout XML
+   ![](files/block-and-childblocks.png)
 
-### EAV
-* Explain the pattern
-* pro & con
-* OR Mapper
-* Show DB
+
+### Models
+Magento models do not only contain data, but also the business logic (rich models), so usually the models are the most complex parts of a Magento solution.
+
+#### Object Relational Mapping (ORM)
+
+Magento models support Object Relational Mapping (ORM). Both the built in models and your own models use the Magento data access capabilities, so that no plain SQL has to be written by developers.
+
+Magento supports two kinds of models:
+
+* ActiveRecord-like/one-object-one-table models
+* Entity Attribute Value (EAV) models
+
+Each Magento model has also a model collection, which are similar to .NET collections (e.g. they can be used in for/as (= foreach in C#) loops.
+
+Magento models do *not* contain any code for accessing the database directly, but they use a `modelResource` class to communicate with the database. Internally, one read and one write adapter is used.
+
+#### Creating a Model
+
+These are typical steps for creating a model that can be persisted in the database (we will perform these steps later on in the exercise part of this developer meeting):
+
+1. Create a new model class
+2. Create a database table for the model
+3. Add model information to the configuration file of the module
+4. Add model resource information to the configuration file of the module
+5. Add a Read Adapter to the configuration file of the module
+6. Add a Write Adapter to the configuration file of the module
+7. Add a PHP class/file for the model
+8. Add a PHP class/file for the resource model
+9. Instantiate the model via Mage::getModel('<module_name>/<model_name>')
+
+#### Setting and Getting Data on Models
+
+Magento models inherit from `Varien_Object`. This class implements some functionality to access model data (via magic getters/setters). Internally, the whole functionality is built on a protected `_data` property which is an associative array. The `getData()` method can be used to get the whole associative array or only certain keys:
+
+    $model->getData();
+    $model->getData('some_property');
+
+All database column names should contain only lowercase characters and should use underscores to separate the different words. Properties named in this way can be accessed directly via `get`, `set`, `unset`, `has`, and `is` like this (note that the `Varien_Object` camel-cases the property name):
+
+    $model->getSomeProperty();
+    $model->setSomeProperty('toSomeValue');
+    $model->unsetSomeProperty();
+    $hasSomeProperty = $model->hasSomeProperty();
+
+In the exercise later on we will see how to retrieve data records from the database or how to save them.
+
+#### The Entity Attribute Value Pattern (EAV)
+
+For some entities (like products), Magento does not use simple (flat) database tables to store the information, but a more complicated, but highly flexible approach called Entity Attribute Value architecture (EAV). This makes the database structure a lot more complicated, but it allows to add an unlimited number of attributes to entities without having to change the database schema.
+
+The EAV model allows vertical data modeling instead of the mostly used horizontal data modeling, which means that if a entity shall be extended by a new property, this is done by adding data records to certain tables, and not by adding a column to an existing table. That means that the Magento entities that are based on the EAV pattern can be extended by new properties without changing the database schema.
+
+Important terms:
+
+* **Entity**: e.g. products, categories, customers, customer addresses, etc.
+* **Attribute**: the names of the items which belong to an entity, e.g. the title or the description of a product. It is important to understand that the attribute tables do not store the actual values, but only the metadata of the attribute.
+* **Value**: Stores the values of the various attributes of the entities.
+
+The following diagram shows the relationship between different database tables for products as an example:
+
+![](files/eav.png)
+
+Both the `catalog_product_entity` and the `eav_attribute` tables contain an `entity_type_id` column that is used to join the attributes to the product. The `eav_attribute` table contains a column `backend_type` that stores the datatype of the respective attribute. The actual values are stored in datatype specific tables like `catalog_product_entity_datetime`.
+
+The EAV system is extendable by new entities, i.e. developers can create new EAV based entities.
+
+**Pros and Cons**: EAV allows developers to extend the Magento system without the need to change existing data structures, so it adds a great deal of flexibility to the system. The downside is complexity and performance. The Magento base installation consists of more than 375 tables. In order to grab all the information for a single entity (like a product), a lot of different tables have to be joined together making the database the bottleneck of a Magento solution.
+
+In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend (**System | Configuration | Catalog |** Expand **Frontend | Use Flat Catalog Category** and **Use Flat Catalog Product**).
+
 
 ## Developing a web log extension
 
