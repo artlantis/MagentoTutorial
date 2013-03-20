@@ -66,6 +66,37 @@ URL: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerc
    
    ![](files/mvc.png)
 
+### Layout System
+
+Layout and design are separated from each other.<br />
+
+####Important terms
+**Design package**: is a collection of related themes. Each design package must have at least one default theme, but can contain any number of theme variants. (Christmas, holidays, etc.) /app/design/frontend/…
+
+**Base package**: A special package that contains all the default elements for a Magento installation. 
+
+**Default package**: This contains the layout elements of the default store (look and feel).
+
+**Theme**: Part of a design package. Contains layout files, template files and locales (optional). A theme can belong to only one design package. Every theme automatically includes 4 basic layouts (one column, two columns with left sidebar, two column with right sidebar, three columns)
+
+**Skin**: CSS, images, JavaScripts. Skins reside in a separate root folder named “Skin”. (Similar sub-tree like app/design)
+
+![](files/sample_skins.png)
+
+**Layout-Files**: Define the hierarchical structure of a page (footer, header, content, …) – XML Files. The structure is defined by handles, blocks and actions. A layout file has always a `<layout>` root node. The first child-level of this nodes are the “handles” (also called layout objects.). 
+
+**Handles** are instantiated by the application controllers' action methods, and so the application logic decides which blocks to display. For doing that the controller code calls `$this->loadLayout()` and `$this->renderLayout()`. Handles contain blocks, which are the most important structural elements.
+
+ ![](files/sample_layout_xml.png)
+
+**Blocks:** Blocks can be seen as view models. Most blocks have a corresponding template file. Blocks contain PHP logic, templates contain HTML and PHP output code. Blocks refer directly back to the models for their data. In other words, the action controller does not pass them a data structure.
+Blocks are hierarchical. Each block can contain any number of child blocks.
+
+
+**Template-Files**: PHTML Files. – They define where the defined areas of the layout file appear in the rendered HTML page. To all of those files together, the documentation refers to as “template”. <br />*Note:* Whenever we use the `$this` keyword, we reference the instance of the related block object.
+
+   ![](files/block-and-childblocks.png)
+
 ### The Filesystem
 
 **Top-Level**<br />
@@ -108,38 +139,6 @@ URL: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerc
 / {Your  Code pool} / {Module} / Model / Mysql4 - Resource models provided by module<br />
 / {Your  Code pool} / {Module} / sql - SQL installation and upgrade files between module versions<br />
 / {Your  Code pool} / {Module} / sql / {resource} / - Resource model specific upgrades<br />
-
-
-### Layout System
-
-Layout and design are separated from each other.<br />
-
-####Important terms
-**Design package**: is a collection of related themes. Each design package must have at least one default theme, but can contain any number of theme variants. (Christmas, holidays, etc.) /app/design/frontend/…
-
-**Base package**: A special package that contains all the default elements for a Magento installation. 
-
-**Default package**: This contains the layout elements of the default store (look and feel).
-
-**Theme**: Part of a design package. Contains layout files, template files and locales (optional). A theme can belong to only one design package. Every theme automatically includes 4 basic layouts (one column, two columns with left sidebar, two column with right sidebar, three columns)
-
-**Skin**: CSS, images, JavaScripts. Skins reside in a separate root folder named “Skin”. (Similar sub-tree like app/design)
-
-![](files/sample_skins.png)
-
-**Layout-Files**: Define the hierarchical structure of a page (footer, header, content, …) – XML Files. The structure is defined by handles, blocks and actions. A layout file has always a `<layout>` root node. The first child-level of this nodes are the “handles” (also called layout objects.). 
-
-**Handles** are instantiated by the application controllers' action methods, and so the application logic decides which blocks to display. For doing that the controller code calls `$this->loadLayout()` and `$this->renderLayout()`. Handles contain blocks, which are the most important structural elements.
-
- ![](files/sample_layout_xml.png)
-
-**Blocks:** Blocks can be seen as view models. Most blocks have a corresponding template file. Blocks contain PHP logic, templates contain HTML and PHP output code. Blocks refer directly back to the models for their data. In other words, the action controller does not pass them a data structure.
-Blocks are hierarchical. Each block can contain any number of child blocks.
-
-
-**Template-Files**: PHTML Files. – They define where the defined areas of the layout file appear in the rendered HTML page. To all of those files together, the documentation refers to as “template”. <br />*Note:* Whenever we use the `$this` keyword, we reference the instance of the related block object.
-
-   ![](files/block-and-childblocks.png)
 
 
 ### Models

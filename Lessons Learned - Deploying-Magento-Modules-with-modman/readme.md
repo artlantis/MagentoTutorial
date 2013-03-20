@@ -126,6 +126,19 @@ The **list** command prints a list of all installed modules.
 
 If you want to install a module which is controlled by another SCM you can use the `checkout`, `hgclone` or `link` command instead.
 
+## Linking a Netbeans project with modman
+
+In order to link the Netbeans projects into the magento folder tree, you need to link it. That Netbeans project is usually also your local git-repository clone.
+
+<!-- language: lang-bash -->
+
+    cd <magento-folder>
+    modman link <Path-to-local-Git-Repository>
+
+![Screenshot Linking Netbeans project with modman](files/link-modman-with-project.png)
+
+
+
 ## Updating modules
 
 If you want to update one or more modules which are already installed you can use the `update-all` or `update <module-name` commands:
