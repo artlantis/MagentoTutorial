@@ -210,7 +210,7 @@ The EAV system is extendable by new entities, i.e. developers can create new EAV
 
 **Pros and Cons**: EAV allows developers to extend the Magento system without the need to change existing data structures, so it adds a great deal of flexibility to the system. The downside is complexity and performance. The Magento base installation consists of more than 350 tables. In order to grab all the information for a single entity (like a product), a lot of different tables have to be joined together, which creates a lot of workload on the database.
 
-In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend \(**System** | **Configuration** | **Catalog** | Expand **Frontend** | **Use Flat Catalog Category** and **Use Flat Catalog Product**).
+In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend ( **System** | **Configuration** | **Catalog** | Expand **Frontend** | **Use Flat Catalog Category** and **Use Flat Catalog Product**).
 
 
 ## Developing a web log extension
