@@ -279,6 +279,7 @@ That contains the following
 
 <!-- language: lang-php -->
 
+	<?php
 	class Magentotutorial_Weblog_IndexController extends Mage_Core_Controller_Front_Action {        
 	
 	    public function testModelAction() {
@@ -329,7 +330,7 @@ This module tag should be the full name of your module, including its package/na
 
 Clear your config cache, and load the following URL
 
-	http://exmaple.com/weblog/index/testModel
+	https://magento-dev.arvato-hightech-ecommerce.com/weblog/index/testModel
 	
 You should see the word "Setup" on a white background. Congratulations, you've setup your first Magento controller!
 
@@ -406,6 +407,8 @@ Magento is trying to __autoload include this Model, but can't find the file. Let
 
 <!-- language: lang-php -->
 
+	<?php 
+
 	class Magentotutorial_Weblog_Model_Blogpost extends Mage_Core_Model_Abstract
 	{
 	    protected function _construct()
@@ -475,7 +478,7 @@ Add the following class at this location: `app/code/local/Magentotutorial/Weblog
 
 Now load the following URL in your browser (after clearing your Magento cache)
 
-	http://example.com/weblog/index/testModel/id/1
+	https://magento-dev.arvato-hightech-ecommerce.com/weblog/index/testModel/id/1
 
 You should see
 
@@ -549,8 +552,8 @@ Add the following methods to your controller:
 	
 Now execute your controller action by loading the following URLs:
 
-	http://example.com/weblog/index/createNewPost
-	http://example.com/weblog/index/showAllBlogPosts
+	https://magento-dev.arvato-hightech-ecommerce.com/weblog/index/createNewPost
+	https://magento-dev.arvato-hightech-ecommerce.com/weblog/index/showAllBlogPosts
 	
 The first works, the second doesn't. We need to add a PHP class file that defines our Blogpost collection. Every Model has a protected property named `_resourceCollectionName` that contains a URI that's used to identify our collection.
 
@@ -564,6 +567,8 @@ So we have to add the following PHP class at the following location
 
 <!-- language: lang-php -->
 
+	<?php
+
 	class Magentotutorial_Weblog_Model_Resource_Blogpost_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract {
 	    protected function _construct()
 	    {
@@ -571,6 +576,9 @@ So we have to add the following PHP class at the following location
 	    }
 	}
 	
+Try again and it should work!
+
+If so... Congratulations you are now a Magento Expert! :)
 
 ## Links
 
