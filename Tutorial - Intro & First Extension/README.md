@@ -1,4 +1,4 @@
-﻿![](files/arvato_hightech_emea_herobanner.jpg)
+![](files/arvato_hightech_emea_herobanner.jpg)
 
 #  Tutorial objectives
 * Understand the Magento Company and Products
@@ -210,7 +210,7 @@ The EAV system is extendable by new entities, i.e. developers can create new EAV
 
 **Pros and Cons**: EAV allows developers to extend the Magento system without the need to change existing data structures, so it adds a great deal of flexibility to the system. The downside is complexity and performance. The Magento base installation consists of more than 350 tables. In order to grab all the information for a single entity (like a product), a lot of different tables have to be joined together, which creates a lot of workload on the database.
 
-In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend (**System** | **Configuration** | **Catalog** | Expand **Frontend** | **Use Flat Catalog Category** and **Use Flat Catalog Product**).
+In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend \(**System** | **Configuration** | **Catalog** | Expand **Frontend** | **Use Flat Catalog Category** and **Use Flat Catalog Product**).
 
 
 ## Developing a web log extension
@@ -579,5 +579,22 @@ So we have to add the following PHP class at the following location
 
 ## Material for self-studying Magento
 
-Books:
- * 
+
+Dev library books:
+
+* Mastering Magento (must read)
+* Magento 1.3 PHP Developer Guide (ok to read, for old version of Magento, but still useful)
+* Magento 1.4 Development Cookbook (ok to read, for old version of Magento, but still useful)
+* Magento 1.4 Theming Cookbook (ok to read, for old version of Magento, but still useful) 
+
+
+Videos:
+
+* Fundamentals of Magento Development (40h course, explains all concepts quite well, need to register in [MagentoU](http://www.magentocommerce.com/))
+* [YouTube Video Series](http://www.youtube.com/playlist?list=PL3B0BAAF482B16EAB) (44 Parts, Covers a lot of how-tos) 
+
+Tutorials:
+
+* [Magento Developer Tutorial Part 1-8](http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-1-introduction-to-magento) (Creates a basic understanding for extending magento as a developer)
+* [Magento Recipes](http://www.magerecipes.com) (Useful Code Snippets)
+
