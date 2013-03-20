@@ -1,4 +1,4 @@
-![](files/arvato_hightech_emea_herobanner.jpg)
+﻿![](files/arvato_hightech_emea_herobanner.jpg)
 
 #  Tutorial objectives
 * Understand the Magento Company and Products
@@ -19,50 +19,50 @@
 
 ## How are they doing development?
 
- * 2 Edition available - Community Edition (CE) and Enterprise Edition (EE)
- * Both Editions are developed by the Magento Company itself, whereas the CE is always a few versions behind the EE
+ * 2 editions available - Community Edition (CE) and Enterprise Edition (EE)
+ * Both editions are developed by the Magento company itself, whereas the CE is always a few versions behind the EE
  * Apart from the version difference, EE contains more default extensions than CE
 
 ### Enterprise Only Features
 
-* SolR Search (but extensions for CE available)
-* Customer Segmentation with Targeted Offerings
-* Dynamic - Rules-bades product relationships
-* Automatic E-Mail Reminders
-* Private Sales for custer groups (incl. Invitation)
-* Gift Registry
-* Gift Wrap Option
-* Rebate Points Modul
-* Several Wishlists per Customer
-* Enhanced Catalog and Content Management System (CMS+)
-* Staging, Merging and Rollback of Content
-* Scheduled Publishing of Pages
-* Customer-specific Profile Attributes
-* Improved Performance (but you can achieve this with Varinish for CE)
-* Payment Bridge
-* Data Encrpytion and Key Management
-* Call Center with Assisted Shopping
-* Minimum Advertised Price
-* Full-page Caching
-* Customer Segmentation with Targeted Offerings
-* Recurring Payments
-* Full Page Caching
+* SolR search (but extensions for CE available)
+* Customer segmentation with targeted offerings
+* Dynamic, rule-based product relationships
+* Automatic e-mail reminders
+* Private sales for customer groups (incl. invitation)
+* Gift registry
+* Gift wrap option
+* Rebate points modul
+* Several wishlists per customer
+* Enhanced catalog and content management system (CMS+)
+* Staging, merging and rollback of content
+* Scheduled publishing of pages
+* Customer-specific profile attributes
+* Improved performance (but you can achieve this with Varnish for CE)
+* Payment bridge
+* Data encrpytion and key management
+* Call center with assisted shopping
+* Minimum advertised price
+* Full-page caching
+* Customer segmentation with targeted offerings
+* Recurring payments
+* Full page caching
 
 ### Magento Connect  
-Url: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerce.com/magento-connect/ "http://www.magentocommerce.com/magento-connect/")
+URL: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerce.com/magento-connect/ "http://www.magentocommerce.com/magento-connect/")
 
 ## General Magento Concepts
 
-* Magento is based on OOP and the Zend-Framework
-* Module-based Architecture
-* Event-Driven Architecture
-* Configuration-Based
+* Magento is based on OOP and the Zend framework
+* Module-based architecture
+* Event-driven architecture
+* Configuration-based
 
 ### MVC
- * Configuration-based Routing
- * Configuration-based Views (Layout+Blocks)
- * Thin-Controllers
- * Models contain Business Logic   
+ * Configuration-based routing
+ * Configuration-based views (layout + blocks)
+ * Thin controllers
+ * Models contain business logic   
    
    ![](files/mvc.png)
 
@@ -71,15 +71,15 @@ Url: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerc
 **Top-Level**<br />
 / app - This is where the big stuff happens :)<br />
 / skin / {area} / {package} / {theme} / - is where design package css and images are<br />
-/ lib - are libraries such as Zend and Varien<br />
-/ js - where you put your javascripts<br />
-/ media - uploaded files (product images, pdf documents, etc)<br />
+/ lib - libraries such as Zend and Varien<br />
+/ js - where you put your JavaScripts<br />
+/ media - uploaded files (product images, PDF documents, etc.)<br />
 / tests - Unit tests (not done yet)<br />
 / var - temporary files<br />
 / includes - contains config.php<br />
 
 **Inside the app folder**<br />
-/ app / etc - global configuration. register your module with the system here<br />
+/ app / etc - global configuration. Register your module with the system here<br />
 / app / code - is where modules have installed their models and controllers<br />
 / app / design - is location of design packages (layouts, templates, translations)<br />
 / app / locale - locale files<br />
@@ -104,37 +104,36 @@ Url: [http://www.magentocommerce.com/magento-connect/](http://www.magentocommerc
 / {Your  Code pool} / {Module} / etc - module configuration<br />
 / {Your  Code pool} / {Module} / controllers - controllers provided by module<br />
 / {Your  Code pool} / {Module} / Block - Block logic classes<br />
-/ {Your  Code pool} / {Module} / Model - Object Models provided by module<br />
-/ {Your  Code pool} / {Module} / Model / Mysql4 - Resource Models provided by module<br />
-/ {Your  Code pool} / {Module} / sql - sql installation and upgrade files between module versions<br />
-/ {Your  Code pool} / {Module} / sql / {resource} / - resource model specific upgrades<br />
+/ {Your  Code pool} / {Module} / Model - Object models provided by module<br />
+/ {Your  Code pool} / {Module} / Model / Mysql4 - Resource models provided by module<br />
+/ {Your  Code pool} / {Module} / sql - SQL installation and upgrade files between module versions<br />
+/ {Your  Code pool} / {Module} / sql / {resource} / - Resource model specific upgrades<br />
 
 
 ### Layout System
 
-Layout and Design are separated from each other.<br />
+Layout and design are separated from each other.<br />
 
 ####Important terms
-**Design package**: is a collection of related themes. Each design package must have at least one default theme, but can contain any number of theme variants. (Christmas, holidays, etc.) /App/Design/Frontend/…
+**Design package**: is a collection of related themes. Each design package must have at least one default theme, but can contain any number of theme variants. (Christmas, holidays, etc.) /app/design/frontend/…
 
 **Base package**: A special package that contains all the default elements for a Magento installation. 
 
 **Default package**: This contains the layout elements of the default store (look and feel).
 
-**Theme**: Part of a design package. Contains Layout Files, Template Files and Locale (optional). A theme can belong to only one design package. Every theme automatically included 4 basic layouts (one column, two columns with left sidebar, two column with right sidebar, three columns)
+**Theme**: Part of a design package. Contains layout files, template files and locales (optional). A theme can belong to only one design package. Every theme automatically includes 4 basic layouts (one column, two columns with left sidebar, two column with right sidebar, three columns)
 
-**Skin**: CSS, images, java script. Skins reside in a separate root folder named “Skin”. (Similar sub-tree like apps/design)
+**Skin**: CSS, images, JavaScripts. Skins reside in a separate root folder named “Skin”. (Similar sub-tree like app/design)
 
 ![](files/sample_skins.png)
 
-**Layout-Files**: Define the hierarchical structure of a page. (footer, header, content, …) – XML Files. The structure is defined by handles, blocks and actions.
- Layout file always has a <layout> root node. The first child-level of this nodes are the “handles” (also called layout objects.). 
+**Layout-Files**: Define the hierarchical structure of a page (footer, header, content, …) – XML Files. The structure is defined by handles, blocks and actions. A layout file has always a `<layout>` root node. The first child-level of this nodes are the “handles” (also called layout objects.). 
 
-**Handles** are instantiated by the application controller’s action methods, and so the application logic decides which blocks get displayed. For doing that the controller code calls $this->loadLayout & $this->renderLayout. Handles contain blocks, which are the most important structural elements.
+**Handles** are instantiated by the application controllers' action methods, and so the application logic decides which blocks to display. For doing that the controller code calls `$this->loadLayout()` and `$this->renderLayout()`. Handles contain blocks, which are the most important structural elements.
 
  ![](files/sample_layout_xml.png)
 
-**Blocks:** Blocks can be seen as view models. Most blocks have a corresponding template file. Blocks contain PHP logic, templates contain HTML and PHP output code. Blocks refer directly back to the models for their data. In other words, the Action Controller does not pass them a data structure.
+**Blocks:** Blocks can be seen as view models. Most blocks have a corresponding template file. Blocks contain PHP logic, templates contain HTML and PHP output code. Blocks refer directly back to the models for their data. In other words, the action controller does not pass them a data structure.
 Blocks are hierarchical. Each block can contain any number of child blocks.
 
 
@@ -152,7 +151,7 @@ Magento models support Object Relational Mapping (ORM). Both the built in models
 
 Magento supports two kinds of models:
 
-* ActiveRecord-like/one-object-one-table models
+* ActiveRecord-like one-object-one-table models
 * Entity Attribute Value (EAV) models
 
 Each Magento model has also a model collection, which are similar to .NET collections (e.g. they can be used in for/as (= foreach in C#) loops.
@@ -171,7 +170,7 @@ These are typical steps for creating a model that can be persisted in the databa
 6. Add a Write Adapter to the configuration file of the module
 7. Add a PHP class/file for the model
 8. Add a PHP class/file for the resource model
-9. Instantiate the model via Mage::getModel('<module_name>/<model_name>')
+9. Instantiate the model via `Mage::getModel('<module_name>/<model_name>')`
 
 #### Setting and Getting Data on Models
 
@@ -180,7 +179,7 @@ Magento models inherit from `Varien_Object`. This class implements some function
     $model->getData();
     $model->getData('some_property');
 
-All database column names should contain only lowercase characters and should use underscores to separate the different words. Properties named in this way can be accessed directly via `get`, `set`, `unset`, `has`, and `is` like this (note that the `Varien_Object` camel-cases the property name):
+All database column names should contain only lowercase characters and should use underscores to separate different words. Properties named in this way can be accessed directly via `get`, `set`, `unset`, `has`, and `is` like this (note that the `Varien_Object` camel-cases the property name):
 
     $model->getSomeProperty();
     $model->setSomeProperty('toSomeValue');
@@ -191,15 +190,15 @@ In the exercise later on we will see how to retrieve data records from the datab
 
 #### The Entity Attribute Value Pattern (EAV)
 
-For some entities (like products), Magento does not use simple (flat) database tables to store the information, but a more complicated, but highly flexible approach called Entity Attribute Value architecture (EAV). This makes the database structure a lot more complicated, but it allows to add an unlimited number of attributes to entities without having to change the database schema.
+For some entities (like products), Magento does not use simple (flat) database tables to store the information, but a more complicated, but highly flexible approach called Entity Attribute Value architecture (EAV). This makes the database structure a lot more complex, but it allows to add an unlimited number of attributes to entities without having to change the database schema.
 
-The EAV model allows vertical data modeling instead of the mostly used horizontal data modeling, which means that if a entity shall be extended by a new property, this is done by adding data records to certain tables, and not by adding a column to an existing table. That means that the Magento entities that are based on the EAV pattern can be extended by new properties without changing the database schema.
+The EAV model allows vertical data modeling instead of the mostly used horizontal data modeling, which means that if a entity shall be extended by a new property, this is done by adding data records to certain tables, and not by adding a column to an existing table.
 
 Important terms:
 
 * **Entity**: e.g. products, categories, customers, customer addresses, etc.
-* **Attribute**: the names of the items which belong to an entity, e.g. the title or the description of a product. It is important to understand that the attribute tables do not store the actual values, but only the metadata of the attribute.
-* **Value**: Stores the values of the various attributes of the entities.
+* **Attribute**: the names of the items which belong to an entity, e.g. the title or the description of a product. It is important to understand that an attribute table does not store the actual values, but only the metadata of the attributes.
+* **Value**: store the actual values of the various attributes of the entities.
 
 The following diagram shows the relationship between different database tables for products as an example:
 
@@ -209,27 +208,26 @@ Both the `catalog_product_entity` and the `eav_attribute` tables contain an `ent
 
 The EAV system is extendable by new entities, i.e. developers can create new EAV based entities.
 
-**Pros and Cons**: EAV allows developers to extend the Magento system without the need to change existing data structures, so it adds a great deal of flexibility to the system. The downside is complexity and performance. The Magento base installation consists of more than 375 tables. In order to grab all the information for a single entity (like a product), a lot of different tables have to be joined together making the database the bottleneck of a Magento solution.
+**Pros and Cons**: EAV allows developers to extend the Magento system without the need to change existing data structures, so it adds a great deal of flexibility to the system. The downside is complexity and performance. The Magento base installation consists of more than 350 tables. In order to grab all the information for a single entity (like a product), a lot of different tables have to be joined together, which creates a lot of workload on the database.
 
-In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend (**System | Configuration | Catalog |** Expand **Frontend | Use Flat Catalog Category** and **Use Flat Catalog Product**).
+In order to bypass the performance bottleneck, the Magento developers decided to "cache" the information from the EAV tables into so-called index or flat tables. For categories and products, this feature can be turned on in the Magento backend (**System** | **Configuration** | **Catalog** | Expand **Frontend** | **Use Flat Catalog Category** and **Use Flat Catalog Product**).
 
 
 ## Developing a web log extension
 
-Enough theory, it's time for a first Module. This walktrough tutorial is mainly derived from [Alan Storms Magento Developer Tutorial Part 3 and 5
-](http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-3-magento-controller-dispatch) <br />
+Enough theory, it's time for a first module. This walktrough tutorial is mainly derived from [Alan Storms Magento Developer Tutorial Part 3 and 5](http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-3-magento-controller-dispatch).<br />
 
 We're going to:
 
 * Create a new "Weblog" module
-* Create a database table for our Model
-* Register a new Model
-* Connect the model with the db - Register a ressource rodel
-* Add a Read Adapter to the config for the Blogpost Model
-* Add a Write Adapter to the config for the Blogpost Model
-* Add a PHP class file for the Blogpost Model
-* Add a PHP class file for the Blogpost Resource Model
-* Instantiate the Model
+* Create a database table for our model
+* Register a new model
+* Connect the model with the database - Register a resource model
+* Add a Read Adapter to the config for the Blogpost model
+* Add a Write Adapter to the config for the Blogpost model
+* Add a PHP class file for the Blogpost model
+* Add a PHP class file for the Blogpost resource model
+* Instantiate the model
 
 ### Create a new module called "Weblog"
 
@@ -267,7 +265,7 @@ Then create a file to activate the module (at path app/etc/modules/Magentotutori
 	    </modules>
 	</config>
 
-Finally, we ensure the module is active. - Clear your Magento cache.
+Finally, we ensure the module is active (Clear your Magento cache).
 
 * In the Magento Admin, go to System->Configuration->Advanced.
 * Expand "Disable Modules Output" (if it isn't already).
@@ -314,7 +312,7 @@ In your config.xml file, add the following section:
 
 #### Understand the routing
 
-The `<frontend>` tag refers to a Magento Area. There are mainly two of them <admin> and <frontend>.<br />
+The `<frontend>` tag refers to a Magento Area. There are mainly two of them: `<admin>` and `<frontend>`.<br />
 The `<routers>` tag contains all custom registered routes.<br />
 
 When a router parses a URL, it gets separated as follows
@@ -325,7 +323,7 @@ So, by defining a value of "weblog" in the `<frontName>` tags, we're telling Mag
 
 	http://example.com/weblog/*
 
-This module tag should be the full name of your module, including its package/namespace name. This will be used by the system to locate your Controller files.
+This module tag should be the full name of your module, including its package/namespace name. This will be used by the system to locate your controller files.
 
 #### Testing the registered action
 
@@ -333,9 +331,9 @@ Clear your config cache, and load the following URL
 
 	http://exmaple.com/weblog/index/testModel
 	
-You should see the word "Setup" on a white background. Congratulations, you've setup your first Magento Controller!
+You should see the word "Setup" on a white background. Congratulations, you've setup your first Magento controller!
 
-### Create a database table for our Model
+### Create a database table for our model
 
 Magento has a system for automatically creating and changing your database schemas, but for the time being we'll just manually create a table for our Model.
 
@@ -358,15 +356,15 @@ And then populate it with some data
 
 
 
-### Register a new Model
+### Register a new model
 
-When you instantiate a Model in Magento, you make a call like this
+When you instantiate a model in Magento, you make a call like this
 
 <!-- language: lang-php -->
 
 	$model = Mage::getModel('weblog/blogpost');
 
-the first part of the URI you pass into get Model is the Model Group Name. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.
+The first part of the URI you pass into `getModel` is the Model Group Name. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded against conflicts use the package name and module name (also in lowercase). The second part of the URI is the lowercase version of your model name.
 
 So, let's add the following XML to our module's config.xml.
 	
@@ -378,7 +376,7 @@ So, let's add the following XML to our module's config.xml.
 	        <weblog>
 	            <class>Magentotutorial_Weblog_Model</class>
 	            <!--
-	            need to create our own resource, cant just
+	            need to create our own resource, can't just
 	            use core_resource
 	            -->
 	            <resourceModel>weblog_resource</resourceModel>
@@ -388,10 +386,10 @@ So, let's add the following XML to our module's config.xml.
 	</global>
 
 `<weblog />` is your Group Name, which should match your module name.<br />
-`<class />` is the BASE name all Models in the weblog group will have.<br />
-`<resourceModel />` indicates which Resource Model that weblog group Models should use.
+`<class />` is the base name all Models in the weblog group will have.<br />
+`<resourceModel />` indicates which Resource Model that weblog group models should use.
 
-So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your testModelAction method, use the following code
+So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your `testModelAction` method, use the following code
 
 <!-- language: lang-php -->
 
@@ -404,9 +402,7 @@ and reload your page. You should see an exception that looks something like this
 
 	include(Magentotutorial/Weblog/Model/Blogpost.php) [function.include]: failed to open stream: No such file or directory
 
-Magento is trying to __autoload include this Model, but can't find the file. Let's create it! Create the following class at the following location
-
-	File: app/code/local/Magentotutorial/Weblog/Model/Blogpost.php
+Magento is trying to __autoload include this Model, but can't find the file. Let's create it! Create the following class at the following location: `app/code/local/Magentotutorial/Weblog/Model/Blogpost.php`:
 
 <!-- language: lang-php -->
 
@@ -419,23 +415,23 @@ Magento is trying to __autoload include this Model, but can't find the file. Let
 	}
 
 		
-### Connect the model with the db - Register a ressource rodel
+### Connect the model with the database - Register a resource model
 
 So, we've setup our Model. Next, we need to setup our Model Resource. Model Resources contain the code that actually talks to our database. In the last section, we included the following in our config.
 
 	<resourceModel>weblog_resource</resourceModel>
 
-The value in `<resourceModel />` will be used to instantiate a Model Resource class. Although you'll never need to call it yourself, when any Model in the weblog group needs to talk to the database, Magento will make the following method call to get the Model resource
+The value in `<resourceModel />` will be used to instantiate a Model Resource class. Although you'll never need to call it yourself, when any model in the weblog group needs to talk to the database, Magento will make the following method call to get the Model resource:
 
 	Mage::getResourceModel('weblog/blogpost');
 
-Again, weblog is the Group Name, and blogpost is the Model. The Mage::getResourceModel method will use the weblog/blogpost URI to inspect the global config and pull out the value in `<resourceModel>` (in this case, weblog_resource). Then, a model class will be instantiated with the following URI
+Again, weblog is the Group Name, and blogpost is the Model. The `Mage::getResourceModel` method will use the weblog/blogpost URI to inspect the global config and pull out the value in `<resourceModel>` (in this case, `weblog_resource`). Then, a model class will be instantiated with the following URI:
 
 	weblog_resource/blogpost
 
-So, if you followed that all the way, what this means is, resource models are configured in the same section of the XML config as normal Models. This can be confusing to newcomers and old-hands alike.
+So, if you followed that all the way, what this means is, resource models are configured in the same section of the XML config as normal models. This can be confusing to newcomers and old-hands alike.
 
-So, with that in mind, let's configure our resource. In our <models> section add
+So, with that in mind, let's configure our resource. In our `<models>` section add
 
 <!-- language: lang-xml -->
 
@@ -449,11 +445,11 @@ So, with that in mind, let's configure our resource. In our <models> section add
 	    </models>
 	</global>
 
-You're adding the `<weblog_resource />` tag, which is the value of the `<resourceModel />` tag you just setup. The value of` <class />` is the base name that all your resource modes will have, and should be named with the following format
+You're adding the `<weblog_resource />` tag, which is the value of the `<resourceModel />` tag you just setup. The value of` <class />` is the base name that all your resource models will have, and should be named with the following format
 
 	Packagename_Modulename_Model_Resource
 
-So, we have a configured resource, let's try loading up some Model data. Change your action to look like the following
+So, we have a configured resource, let's try loading up some Model data. Change your action to look like the following:
 
 <!-- language: lang-php -->
 
@@ -466,9 +462,7 @@ So, we have a configured resource, let's try loading up some Model data. Change 
 	    var_dump($data);
 	}
 
-Add the following class at at the following location
-
-	File: app/code/local/Magentotutorial/Weblog/Model/Resource/Blogpost.php
+Add the following class at this location: `app/code/local/Magentotutorial/Weblog/Model/Resource/Blogpost.php`:
 
 <!-- language: lang-php -->
 
@@ -487,7 +481,7 @@ You should see
 
 	Can't retrieve entity config: weblog/blogpost
 
-When we use the Model URI weblog/blogpost, we're telling Magento we want the Model Group weblog, and the blogpost Entity. In the context of simple Models that extend Mage_Core_Model_Resource_Db_Abstract, an entity corresponds to a table. In this case, the table named blog_post that we created above. 
+When we use the Model URI weblog/blogpost, we're telling Magento we want the Model Group weblog, and the blogpost Entity. In the context of simple models which extend `Mage_Core_Model_Resource_Db_Abstract`, an entity corresponds to a table. In this case, the table named `blog_post` that we created above. 
 
 Let's add that entity to our XML config.
 
@@ -518,7 +512,7 @@ Clear your Magento cache, cross your fingers, reload the page and ...
 
 ### Use the new model and data access in the controller
 
-Add the following method to your Controller
+Add the following methods to your controller:
 
 <!-- language: lang-php -->
 
@@ -553,14 +547,14 @@ Add the following method to your Controller
 	    }
 	}
 	
-Now execute your Controller Action by loading the following URLs:
+Now execute your controller action by loading the following URLs:
 
 	http://example.com/weblog/index/createNewPost
 	http://example.com/weblog/index/showAllBlogPosts
 	
-The first works, the second not. We need to add a PHP class file that defines our Blogpost collection. Every Model has a protected property named _resourceCollectionName that contains a URI that's used to identify our collection.
+The first works, the second doesn't. We need to add a PHP class file that defines our Blogpost collection. Every Model has a protected property named `_resourceCollectionName` that contains a URI that's used to identify our collection.
 
-Magento considers Collections part of the Resource, so this URI is converted into the class name. So the ressource identifier is translated into a type name like this:
+Magento considers collections as part of the Resource, so this URI is converted into the class name. So the ressource identifier is translated into a type name like this:
 
 	'weblog/blogpost_collection' => Magentotutorial_Weblog_Model_Resource_Blogpost_Collection
 
@@ -581,13 +575,9 @@ So we have to add the following PHP class at the following location
 ## Links
 
 * [Magento for Developers: Part 3 - Magento Controller Dispatch](http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-3-magento-controller-dispatch)
-* [Magento for Developers: Part 5 - Magento Models and ORM Basics](http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-5-magento-models-and-orm-basics)
+* [Magento for Developers: Part 5 - Magento Models and ORM Basics](http://www.magentocommerce.com/knowge-base/entry/magento-for-dev-part-5-magento-models-and-orm-basics)
 
 ## Material for self-studying Magento
 
 Books:
  * 
-
-
-
-
