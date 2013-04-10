@@ -577,6 +577,102 @@ So we have to add the following PHP class at the following location
 	
 Try again and it should work!
 
+### Connect the module with a layout
+
+
+
+Create a file at app/code/local/Magentotutorial/Weblog/Block/Allposts.php
+
+That contains the following
+
+<!-- language: lang-php -->
+
+	<?php
+	class Magentotutorial_Weblog_Block_Allposts extends Mage_Core_Block_Template
+	{
+		public function getAllPosts()
+		{
+			return Mage::getModel('weblog/blogpost')->getCollection();
+		}
+	}
+
+In the Template's Block class we define the function getAllPosts().
+The block's getAllPosts then instantiates models and reads their data, returning a result to the template.
+
+#### The Layout
+
+Create a folder at 
+app/design/frontend/enterprise/default/template/magentotutorial_weblog
+
+Create a file at 
+app/design/frontend/enterprise/default/template/magentotutorial_weblog/show-all-blogposts.phtml
+
+That contains the following
+
+<!-- language: lang-php -->
+
+	<?php $blogposts = $this->getAllPosts(); ?>
+	
+	<div>
+	    <ul>
+	    <?php 
+	        foreach($blogposts as $blogpost){
+	            echo '<li><b>'.$blogpost->getTitle().'</b>&nbsp&nbsp&nbsp' . $blogpost->getPost() . '</li>';
+	        }
+	    ?>
+	    </ul>
+	</div>
+
+### Register the layout
+
+Create a file at 
+app/design/frontend/enterprise/default/layout/magentotutorial_weblog.xml
+
+
+<!-- language: lang-php -->
+	<layout>
+	    <weblog_index_showallblogposts>
+	        <reference name="content">
+	            <block name="allposts" type="weblog/allposts" template="magentotutorial_weblog/show-all-blogposts.phtml"/>
+	        </reference>
+	    </weblog_index_showallblogposts>
+	</layout>
+>
+
+	weblog_index_showallblogposts -> defines the action
+	<refernce name="" /> will hook all contained XML declarations into an existing block with the specified name.
+	Contained <block /> nodes will be assigned as child blocks to the referenced parent block.
+
+Let's add that block to our XML config.
+
+<!-- language: lang-php -->
+	<global>
+        <!-- ... -->
+        <blocks>
+            <weblog>
+                <class>Magentotutorial_Weblog_Block</class>
+            </weblog>
+        </blocks>
+        <!-- ... -->
+    </global>
+
+
+Last adapt the showAllBlogPostsAction Action function in IndexController.php
+
+<!-- language: lang-php -->
+	    public function showAllBlogPostsAction() {
+
+	        $this->loadLayout();
+	        $this->renderLayout();
+
+	    }
+
+Now execute your controller action by loading the following URL:
+
+	https://magento-dev.arvato-hightech-ecommerce.com/weblog/index/showAllBlogPosts
+
+Try it out.
+
 If so... Congratulations you are now a Magento Expert! :)
 
 ## Links
